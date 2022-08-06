@@ -5,15 +5,17 @@ import sqlite3
 
 app = Flask(__name__)
 
+
 @app.route("/")
-def hello_world():
-    return "<p>Hello, World!</p>"
+def index():
+    return render_template('index.html')
 
-@app.route("/Login/", methods = ['GET', 'POST'])
+
+@app.route("/Login/", methods=['GET', 'POST'])
 def login():
-    if request.methods == 'POST':
+    return render_template('login.html')
 
-        return
-    
-    return render_template()
 
+@app.route("/signUp/", methods=['GET', 'POST'])
+def signUp():
+    return render_template('sign-Up.html')

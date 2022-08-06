@@ -1,0 +1,17 @@
+.contents {
+    padding-top: 20px;
+    min-height: 100vh;
+    background-color: #343F4F;
+    color: #f0ebd8;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.contents .center img{
+    width: 400px;
+    height: 400px;
+    margin-bottom: 20px;
+}

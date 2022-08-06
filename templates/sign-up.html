@@ -1,0 +1,42 @@
+{% extends 'index-base.html' %}
+
+{% block title %}ToDo{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/shared.css">
+<link rel="stylesheet" href="../static/css/sign-up.css">
+{% endblock %}
+
+{% block button1 %}
+<li><a href="{{url_for('signUp')}}"> Sign-Up </a></li>
+{% endblock %}
+
+{% block button2 %}
+<li><a href="{{url_for('login')}}"> Login</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="contents">
+        <div class="center">
+            <img src="../static/images/logo-img.png" alt="" class="logo">
+            <label for="basic-url" class="form-label" style="display:block;">Username</label>
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1">@</span>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username"
+                    aria-describedby="basic-addon1">
+            </div>
+            
+            <label for="basic-url" class="form-label">Password</label>
+            <div class="input-group mb-4">
+                <input type="password" class="form-control" placeholder="Password" aria-label="Recipient's username"
+                    aria-describedby="basic-addon2">
+            </div>
+            
+            <label for="basic-url" class="form-label">E-mail</label>
+            <div class="input-group mb-5">
+                <span class="input-group-text" id="basic-addon3">example@iti.com</span>
+                <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+            </div>
+        </div>
+    </div>
+{% endblock %}
