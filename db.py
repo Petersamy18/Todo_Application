@@ -1,5 +1,6 @@
 import sqlite3
 
+
 def get_db():
 
     db = sqlite3.connect('TodoDB.sqlite',
@@ -22,3 +23,10 @@ def retreive_users():
     data = connection.fetchall()
     close_db(connection)
     return data
+
+def insert_user(email, name, h_pass):
+    connection = get_db().cursor()
+    connection.execute(f"Insert into User (Email, Username, Hashed_Password) values('{email}', '{name}', '{h_pass}')")
+    connection.commit()
+    close_db(connection)
+
