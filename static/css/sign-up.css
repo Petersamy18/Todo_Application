@@ -10,8 +10,12 @@
 }
 
 
-.contents .center img{
+.contents .center img {
     width: 400px;
     height: 400px;
+    margin-bottom: 20px;
+}
+
+button {
     margin-bottom: 20px;
 }

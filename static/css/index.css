@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.content{
+.content {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -13,17 +13,17 @@
     background-color: #343F4F;
 }
 
-.text-box{
+.text-box {
     display: flex;
 }
 
-.text-box .static-text{
+.text-box .static-text {
     color: #f0ebd8;
     font-size: 70px;
     font-weight: 400;
 }
 
-.text-box .dynamic-text{
+.text-box .dynamic-text {
     margin-left: 15px;
     padding-left: 10px;
     margin-top: 8px;
@@ -33,7 +33,7 @@
     border-left: 2px solid #f0ebd8;
 }
 
-.text-box .dynamic-text li{
+.text-box .dynamic-text li {
     list-style: none;
     color: #748CAB;
     font-size: 60px;
@@ -44,10 +44,7 @@
 }
 
 @keyframes slide {
-    100%{
+    100% {
         top: -360px;
     }
 }
-
-
-

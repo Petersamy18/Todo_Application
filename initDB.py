@@ -1,6 +1,7 @@
 from db import get_db, close_db
 import sqlite3
 
+
 def create_tables():
     try:
 
@@ -18,13 +19,14 @@ def create_tables():
                             Task_id INTEGER PRIMARY KEY AUTOINCREMENT,
                             Title   TEXT UNIQUE NOT NULL,
                             Describtion TEXT UNIQUE NOT NULL,
-                            Status TEXT NOT NULL,
+                            Status TEXT,
                             User_id INTEGER);
                             """)
         connection.commit()
         close_db(connection)
-                    
+
     except Exception as err:
         print("Error")
+
 
 create_tables()

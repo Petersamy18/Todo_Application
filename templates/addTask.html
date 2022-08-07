@@ -3,7 +3,7 @@
 
 {% block style %}
 <link rel="stylesheet" href="../static/css/shared.css">
-<link rel="stylesheet" href="../static/css/home.css">
+<link rel="stylesheet" href="../static/css/add-task.css">
 {% endblock %}
 
 {% block anchor %}
@@ -25,8 +25,15 @@
 {% endblock %}
 
 {% block content %}
-<div class="content">
-    <h1>Welcome back, {{g.user.Username}}!</h1>
-    <img src="../static/images/logo-img.png" alt="">
+<div class="container">
+
+    <div clarss="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Email address</label>
+        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
 </div>
 {% endblock %}

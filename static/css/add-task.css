@@ -1,0 +1,12 @@
+body {
+    background-color: #343F4F;
+}
+
+.container {
+    margin-top: 50px;
+    padding: 20px;
+}
+
+.footer {
+    position: absolute;
+}
