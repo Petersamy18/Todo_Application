@@ -14,3 +14,11 @@ def close_db(db=None):
 
     if db is not None:
         db.close()
+
+
+def retreive_users():
+    connection = get_db().cursor()
+    connection.execute("select * from User;")
+    data = connection.fetchall()
+    close_db(connection)
+    return data
