@@ -40,3 +40,12 @@ def retreive_tasks(id):
     data = connection.fetchall()
     close_db(connection)
     return data
+
+
+def insert_Task(title, descr, id):
+    connection = get_db()
+    connection.execute(
+        f"Insert into Task (Title, Describtion, status, User_id) values('{title}', '{descr}', 'Nothing', {id})")
+    connection.commit()
+    close_db(connection)
+
