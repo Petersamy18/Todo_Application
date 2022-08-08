@@ -52,7 +52,7 @@ def insert_Task(title, descr, id):
 
 def update_task(title,descr,status,id):
     connection = get_db()
-    connection.execute(f"UPDATE Task SET Title='{title}', Describtion='{descr}', status='{status}' WHERE Task_id={id};")
+    connection.execute(f"""UPDATE Task SET Title="{title}", Describtion="{descr}", status="{status}" WHERE Task_id={id};""")
     connection.commit()
     close_db(connection)
 

@@ -1,4 +1,4 @@
-{% extends 'index-base.html'%}
+{% extends 'home-base.html'%}
 {% block title %}ToDo{% endblock %}
 
 {% block style %}
@@ -6,24 +6,6 @@
 <link rel="stylesheet" href="../static/css/shared.css">
 <link rel="stylesheet" href="../static/css/add-task.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-{% endblock %}
-
-{% block anchor %}
-<a href="{{url_for('home')}}">
-    <img src="../static/images/checklist.png" alt="ToDo Logo" class="logo">
-</a>
-{% endblock %}
-
-{% block button1 %}
-<li><a href="{{url_for('addTask')}}"> Add Task </a></li>
-{% endblock %}
-
-{% block button2 %}
-<li><a href="{{url_for('viewTasks')}}"> View Tasks </a></li>
-{% endblock %}
-
-{% block button3 %}
-<li><a href="{{url_for('index')}}"> Logout </a></li>
 {% endblock %}
 
 {% block content %}

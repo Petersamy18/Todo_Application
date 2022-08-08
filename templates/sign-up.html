@@ -13,18 +13,6 @@
 </a>
 {% endblock %}
 
-{% block button1 %}
-<li><a href="{{url_for('signUp')}}"> Sign-Up </a></li>
-{% endblock %}
-
-{% block button2 %}
-<li><a href="{{url_for('login')}}"> Login</a></li>
-{% endblock %}
-
-{% block button3 %}
-<li><a href="#"> About </a></li>
-{% endblock %}
-
 {% block content %}
 <div class="contents">
     <div class="center">
@@ -46,7 +34,7 @@
             <label for="basic-url" class="form-label">E-mail</label>
             <div class="input-group mb-5">
                 <span class="input-group-text" id="basic-addon3">example@iti.com</span>
-                <input type="text" name="email" required="required" class="form-control" id="basic-url"
+                <input type="email" name="email" required="required" class="form-control" id="basic-url"
                     aria-describedby="basic-addon3">
             </div>
             <button type="submit" class="btn btn-dark">Register</button>
