@@ -1,0 +1,53 @@
+{% extends 'index-base.html' %}
+
+{% block title %}view Tasks{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="../static/css/shared.css">
+<link rel="stylesheet" href="../static/css/update-task.css">
+{% endblock %}
+
+{% block anchor %}
+<a href="{{url_for('home')}}">
+    <img src="../static/images/checklist.png" alt="ToDo Logo" class="logo">
+</a>
+{% endblock %}
+
+{% block button1 %}
+<li><a href="{{url_for('addTask')}}"> Add Task </a></li>
+{% endblock %}
+
+{% block button2 %}
+<li><a href="{{url_for('viewTasks')}}"> View Tasks </a></li>
+{% endblock %}
+
+{% block button3 %}
+<li><a href="{{url_for('index')}}"> Logout </a></li>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="content">
+        <img src="../static/images/logo-img.png" class="logo" alt="">
+        <form method="POST">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Task Title</label>
+                <input name="title" value="{{task.Title}}" type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" required="required">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Description</label>
+                <input name="description" value="{{task.Describtion}}" type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" style="height:10vh ;" required="required">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputEmail1">Status</label>
+                <input name="status" value="{{task.status}}" type="text" class="form-control" id="exampleInputEmail1"
+                    aria-describedby="emailHelp" required="required">
+            </div>
+            <button type="submit" class="btn">Update</button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}

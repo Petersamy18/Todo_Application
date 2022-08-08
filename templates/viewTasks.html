@@ -2,6 +2,11 @@
 
 {% block title %}view Tasks{% endblock %}
 
+{% block style %}
+<link rel="stylesheet" href="../static/css/shared.css">
+<link rel="stylesheet" href="../static/css/view-tasks.css">
+{% endblock %}
+
 {% block anchor %}
 <a href="{{url_for('home')}}">
     <img src="../static/images/checklist.png" alt="ToDo Logo" class="logo">
@@ -22,23 +27,30 @@
 
 
 {% block content %}
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">Task_id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Description</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for row in tasks %}
-        <tr>
-            <td>{{row.Task_id}}
-            </td>
-            <td>{{row.Title}}</td>
-            <td> {{row.Describtion}}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+<div class="container">
+    <div class="content">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <!-- <th scope="col">Task_id</th> -->
+                    <th scope="col">Title</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Status</th>
+                    <th scope="col"> </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in tasks %}
+                <tr>
+                    <!-- <td>{{row.Task_id}}</td> -->
+                    <td><a href="{{url_for('updateTask',id = row.Task_id)}}">{{row.Title}}</a></td>
+                    <td> {{row.Describtion}}</td>
+                    <td> {{row.status}}</td>
+                    <td><a href="{{url_for('deleteTask',id = row.Task_id)}}">Delete</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
 {% endblock %}

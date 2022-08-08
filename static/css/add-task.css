@@ -1,48 +1,41 @@
-html,
-body{
-    margin-top: -12px;
-    height: 100%;
-    background-color: #1a2226 !important;
-    font-family: "Roboto",sans-serif;
+body {
+    font-family: "Roboto", sans-serif;
 }
 
-
-.global-container{
-    height: 100%;
+.global-container {
+    height: 100vh;
+    background-color: #343F4F;
     display: flex;
     align-items: center;
     justify-content: center;
-    color:white
+    color: #f0ebd8;
 }
 
-form{
+form {
     padding-top: 10px;
     font-size: 14px;
     margin-top: 30px;
-    
-
 }
 
-.login-form{
+.login-form {
     width: 380px;
     height: 525px;
     margin: 20px;
-    background: rgb(10,0,36);
-background: linear-gradient(90deg, rgba(10,0,36,1) 0%, rgba(33,40,134,1) 0%, rgba(51,37,59,1) 100%);
+    background: #0d1321;
     border-radius: 10px !important;
 
 }
 
 input[type='text'],
-textarea[type='text']{
-    background: #1a2226;
+textarea[type='text'] {
+    background: #748CAB;
     border: 2px solid white;
     border-radius: 10px;
-    color: white;
+    color: #f0ebd8;
 }
 
 input[type='text']:focus,
-textarea[type='text']:focus{
+textarea[type='text']:focus {
     outline: none;
     border: none;
     background: white;
@@ -50,21 +43,27 @@ textarea[type='text']:focus{
 
 }
 
-.card-title{
+.card-title {
     font-weight: 900px;
     padding-top: 20px;
-}   
+}
 
 
-.btn{
+.btn {
     font-size: 14px;
     transform: translateY(10px);
     border-radius: 10px !important;
-    margin-left: 130px;
-
+    color: #f0ebd8;
+    margin-top: 25px;
+    background-color: #1b2744;
+    width: 100%;
 }
 
-.signup{
+.btn:hover{
+    background-color: #748CAB;
+}
+
+.signup {
     text-align: center;
     padding-top: 25px;
 }
@@ -72,5 +71,4 @@ textarea[type='text']:focus{
 .bg-image {
     margin-top: -3px;
     height: 100vh;
-
 }

@@ -1,0 +1,21 @@
+body{
+    background-color: #343F4F;
+}
+
+table{
+    background-color: #0d1321;
+    color: #f0ebd8;
+    border-radius: 10px;
+}
+
+tr{
+    color: #f0ebd8;
+}
+
+th,a{
+    color: #748CAB;
+}
+
+a:hover{
+    color: #343F4F;
+}

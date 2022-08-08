@@ -1,8 +1,9 @@
+from asyncio import Task
 from flask import Flask, request, redirect, url_for, flash
 from flask import render_template
 from flask import request
 from flask import session, g
-from db import get_db, close_db, retreive_tasks, retreive_users, insert_user, insert_Task
+from db import get_db, close_db, retreive_tasks, retreive_users, insert_user, insert_Task, update_task, retreive_task, delete_task
 import sqlite3
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -89,11 +90,9 @@ def addTask():
             description = request.form['description']
             insert_Task(title, description, g.user['User_id'])
             return redirect(url_for('viewTasks'))
-            
         except Exception as err:
             print(err)
             return render_template('addTask.html')
-
     return render_template('addTask.html')
 
 
@@ -101,3 +100,19 @@ def addTask():
 def viewTasks():
     tasks = retreive_tasks(g.user['User_id'])
     return render_template('viewTasks.html', tasks=tasks)
+
+@app.route("/updateTask/<int:id>", methods=['GET', 'POST'])
+def updateTask(id=None):
+    if request.method == "POST":
+        taskTitle = request.form['title']
+        description = request.form['description']
+        status = request.form['status']
+        update_task(taskTitle,description,status,id)
+        return redirect(url_for('viewTasks'))
+    task = retreive_task(id)
+    return render_template('updateTask.html',task=task)
+
+@app.route("/deleteTask/<int:id>", methods=['GET', 'POST'])
+def deleteTask(id=None):
+    delete_task(id)
+    return redirect(url_for('viewTasks'))
