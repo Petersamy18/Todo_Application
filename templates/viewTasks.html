@@ -1,0 +1,44 @@
+{% extends 'index-base.html' %}
+
+{% block title %}view Tasks{% endblock %}
+
+{% block anchor %}
+<a href="{{url_for('home')}}">
+    <img src="../static/images/checklist.png" alt="ToDo Logo" class="logo">
+</a>
+{% endblock %}
+
+{% block button1 %}
+<li><a href="{{url_for('addTask')}}"> Add Task </a></li>
+{% endblock %}
+
+{% block button2 %}
+<li><a href="{{url_for('viewTasks')}}"> View Tasks </a></li>
+{% endblock %}
+
+{% block button3 %}
+<li><a href="{{url_for('index')}}"> Logout </a></li>
+{% endblock %}
+
+
+{% block content %}
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Task_id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in tasks %}
+        <tr>
+            <td>{{row.Task_id}}
+            </td>
+            <td>{{row.Title}}</td>
+            <td> {{row.Describtion}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

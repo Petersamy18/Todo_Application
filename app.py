@@ -2,7 +2,7 @@ from flask import Flask, request, redirect, url_for, flash
 from flask import render_template
 from flask import request
 from flask import session, g
-from db import get_db, close_db, retreive_users, insert_user
+from db import get_db, close_db, retreive_tasks, retreive_users, insert_user
 import sqlite3
 from werkzeug.security import check_password_hash, generate_password_hash
 
@@ -83,9 +83,26 @@ def signUp():
 
 @app.route("/addTask/", methods=['GET', 'POST'])
 def addTask():
+    if request.method == 'POST':
+        try:
+            title = request.form['title']
+            description = request.form['description']
+            connection = get_db()
+            User_id = session.pop('user_id')
+            connection.execute(
+                f"Insert into Task (Title, Describtion, User_id,Status) values('{title}', '{description}', '{User_id}','Nothing')")
+            connection.commit()
+            close_db(connection)
+        except Exception as err:
+            print(err)
+            return render_template('sign-up.html')
+
     return render_template('addTask.html')
 
 
 @app.route("/viewTasks/", methods=['GET', 'POST'])
 def viewTasks():
-    return render_template('viewTasks.html')
+    User_id = session.pop('user_id')
+    print(User_id)
+    tasks = retreive_tasks(User_id)
+    return render_template('viewTasks.html', tasks=tasks)

@@ -31,3 +31,12 @@ def insert_user(email, name, h_pass):
         f"Insert into User (Email, Username, Hashed_Password) values('{email}', '{name}', '{h_pass}')")
     connection.commit()
     close_db(connection)
+
+
+def retreive_tasks(id):
+    connection = get_db().cursor()
+    connection.execute(
+        f"select Task_id,Title,Describtion from Task WHERE  User_id={id} ")
+    data = connection.fetchall()
+    close_db(connection)
+    return data

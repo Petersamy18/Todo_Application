@@ -2,8 +2,10 @@
 {% block title %}ToDo{% endblock %}
 
 {% block style %}
+
 <link rel="stylesheet" href="../static/css/shared.css">
 <link rel="stylesheet" href="../static/css/add-task.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"> -->
 {% endblock %}
 
 {% block anchor %}
@@ -25,15 +27,30 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-
-    <div clarss="mb-3">
-        <label for="exampleFormControlInput1" class="form-label">Email address</label>
-        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-    </div>
-    <div class="mb-3">
-        <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
-        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+<div class="bg-image card shadow-1-strong"
+    style="background-image: url('https://mdbcdn.b-cdn.net/img/new/slides/003.webp');">
+    <div class="global-container">
+        <div class="card login-form">
+            <div class="card-body">
+                <h1 class="card-title text-center">Add a Task</h1>
+                <div class="card-text">
+                    <form method="post">
+                        <div class="form-group">
+                            <label for="exampleInputTask">Title</label>
+                            <input type="text" class="form-control form-control-sm" id="exampleInputTask" name="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputDescription">Description</label>
+                            <textarea type="text" class="form-control " id="exampleInputDescription" name="description"
+                                style="height:30vh ;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large btn-block">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+</div>
+
 {% endblock %}

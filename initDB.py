@@ -19,7 +19,7 @@ def create_tables():
                             Task_id INTEGER PRIMARY KEY AUTOINCREMENT,
                             Title   TEXT UNIQUE NOT NULL,
                             Describtion TEXT UNIQUE NOT NULL,
-                            Status TEXT,
+                            Status TEXT  ,
                             User_id INTEGER);
                             """)
         connection.commit()
